@@ -9,14 +9,7 @@ import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 export const CtaSection: React.FC = () => {
   const { t } = useLanguage();
 
-  const openWhatsApp = () => {
-    const url = `https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(landingConfig.whatsappTrialMessage)}`;
-    window.open(url, '_blank');
-  };
-
-  const openUrl = (url: string) => {
-    window.open(url, '_blank');
-  };
+  const whatsappUrl = `https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(landingConfig.whatsappTrialMessage)}`;
 
   return (
     <section id="contact" className="py-20 bg-[#0A0E1A] relative overflow-hidden">
@@ -43,39 +36,47 @@ export const CtaSection: React.FC = () => {
               {t('landing_cta_subtitle')}
             </p>
 
-            {/* Download & WhatsApp Buttons */}
+            {/* Download & WhatsApp Links */}
             <div className="flex flex-wrap items-center justify-center gap-4 pt-6">
-              <button
-                onClick={openWhatsApp}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 px-7 py-4 text-base font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] rounded-2xl shadow-xl shadow-[#25D366]/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <WhatsAppIcon className="w-5 h-5 text-white" />
                 <span>{t('landing_cta_whatsapp')}</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => openUrl(landingConfig.androidDownloadUrl)}
+              <a
+                href={landingConfig.androidDownloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 px-5 py-3.5 text-sm font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-2xl backdrop-blur-md transition-all hover:scale-[1.02]"
               >
                 <Smartphone className="w-4 h-4 text-emerald-400" />
                 <span>{t('landing_cta_download_android')}</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => openUrl(landingConfig.iosDownloadUrl)}
+              <a
+                href={landingConfig.iosDownloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 px-5 py-3.5 text-sm font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-2xl backdrop-blur-md transition-all hover:scale-[1.02]"
               >
                 <Apple className="w-4 h-4 text-gray-200" />
                 <span>{t('landing_cta_download_ios')}</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => openUrl(landingConfig.windowsDownloadUrl)}
+              <a
+                href={landingConfig.windowsDownloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 px-5 py-3.5 text-sm font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-2xl backdrop-blur-md transition-all hover:scale-[1.02]"
               >
                 <Monitor className="w-4 h-4 text-blue-400" />
                 <span>{t('landing_cta_download_windows')}</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -104,14 +104,16 @@ export const Navbar: React.FC = () => {
               <span>{language === 'ar' ? 'English' : 'العربية'}</span>
             </button>
 
-            {/* CTA Button */}
-            <button
-              onClick={openWhatsApp}
+            {/* CTA Link */}
+            <a
+              href={`https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(landingConfig.whatsappTrialMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-xl shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40 transition-all duration-200 active:scale-[0.98]"
             >
               <WhatsAppIcon className="w-4 h-4 text-white" />
               <span>{t('landing_nav_contact')}</span>
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -145,13 +147,15 @@ export const Navbar: React.FC = () => {
             </button>
           ))}
           <div className="pt-3">
-            <button
-              onClick={openWhatsApp}
+            <a
+              href={`https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(landingConfig.whatsappTrialMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl shadow-lg shadow-emerald-600/30"
             >
               <WhatsAppIcon className="w-5 h-5 text-white" />
               <span>{t('landing_hero_cta_whatsapp')}</span>
-            </button>
+            </a>
           </div>
         </div>
       )}

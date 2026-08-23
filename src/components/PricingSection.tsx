@@ -79,7 +79,7 @@ export const PricingSection: React.FC = () => {
   const originalPrice = calculateOriginalPrice();
   const monthlyEquivalent = calculateMonthlyEquivalent();
 
-  const handleWhatsAppOrder = () => {
+  const getWhatsAppUrl = () => {
     const levelStr = isVip ? 'VIP (الكاملة)' : 'Standard (الأساسية)';
     const platformStr =
       selectedPlatform === 'both'
@@ -94,10 +94,7 @@ export const PricingSection: React.FC = () => {
     if (selectedCycle === 'lifetime') cycleStr = 'ترخيص مدى الحياة';
 
     const text = `أهلاً بك، أريد الاشتراك في تطبيق تحصيل:\n• المستوى: ${levelStr}\n• المنصة: ${platformStr}\n• نظام السداد: ${cycleStr}\n• السعر: ${currentPrice} ج.م`;
-    window.open(
-      `https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(text)}`,
-      '_blank'
-    );
+    return `https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(text)}`;
   };
 
   const standardFeatures = [
@@ -339,23 +336,27 @@ export const PricingSection: React.FC = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Links */}
           <div className="space-y-4">
-            <button
-              onClick={handleWhatsAppOrder}
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-3 py-4 text-base font-bold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:from-blue-500 hover:to-indigo-500 rounded-2xl shadow-xl shadow-blue-600/30 transition-all duration-300 active:scale-[0.99]"
             >
               <Zap className="w-5 h-5 fill-white" />
               <span>{t('landing_pricing_cta')}</span>
-            </button>
+            </a>
 
-            <button
-              onClick={handleWhatsAppOrder}
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-3 py-3 text-sm font-semibold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-2xl transition-all duration-200"
             >
               <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
               <span>{t('landing_pricing_order_whatsapp')}</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

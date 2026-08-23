@@ -27,14 +27,7 @@ export const Footer: React.FC = () => {
     }
   };
 
-  const openUrl = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  const openWhatsApp = () => {
-    const url = `https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(landingConfig.whatsappTrialMessage)}`;
-    window.open(url, '_blank');
-  };
+  const whatsappUrl = `https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(landingConfig.whatsappTrialMessage)}`;
 
   return (
     <footer className="bg-[#070A14] border-t border-white/10 text-gray-400 py-16">
@@ -54,29 +47,35 @@ export const Footer: React.FC = () => {
 
             {/* Social Icons Row */}
             <div className="flex items-center gap-3 pt-2">
-              <button
-                onClick={() => openUrl(landingConfig.facebookUrl)}
+              <a
+                href={landingConfig.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook Page"
                 className="p-2.5 rounded-full bg-white/5 hover:bg-blue-600/20 text-gray-300 hover:text-blue-400 border border-white/10 hover:border-blue-500/40 transition-all duration-200"
               >
                 <FacebookIcon />
-              </button>
+              </a>
 
-              <button
-                onClick={openWhatsApp}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="WhatsApp Support"
                 className="p-2.5 rounded-full bg-white/5 hover:bg-emerald-600/20 text-gray-300 hover:text-emerald-400 border border-white/10 hover:border-emerald-500/40 transition-all duration-200"
               >
                 <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
-              </button>
+              </a>
 
-              <button
-                onClick={() => openUrl(`mailto:${landingConfig.email}`)}
+              <a
+                href={`mailto:${landingConfig.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Email Us"
                 className="p-2.5 rounded-full bg-white/5 hover:bg-indigo-600/20 text-gray-300 hover:text-indigo-400 border border-white/10 hover:border-indigo-500/40 transition-all duration-200"
               >
                 <Mail className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </div>
 
@@ -120,21 +119,25 @@ export const Footer: React.FC = () => {
               {t('landing_footer_contact')}
             </h4>
             <div className="space-y-3 text-sm">
-              <button
-                onClick={openWhatsApp}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 text-emerald-400 hover:text-emerald-300 transition-colors"
               >
                 <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
                 <span>{t('landing_footer_whatsapp')} {landingConfig.phoneNumber}</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => openUrl(`mailto:${landingConfig.email}`)}
+              <a
+                href={`mailto:${landingConfig.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 text-indigo-400 hover:text-indigo-300 transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 <span>{landingConfig.email}</span>
-              </button>
+              </a>
 
               <div className="flex items-center gap-2.5 text-gray-400">
                 <Phone className="w-4 h-4 text-blue-400" />

@@ -77,13 +77,15 @@ export const HeroSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-2">
-              <button
-                onClick={openWhatsApp}
+              <a
+                href={`https://wa.me/${landingConfig.whatsappNumber}?text=${encodeURIComponent(landingConfig.whatsappTrialMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 px-7 py-4 text-base font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] rounded-2xl shadow-xl shadow-[#25D366]/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <WhatsAppIcon className="w-5 h-5 text-white" />
                 <span>{t('landing_hero_cta_whatsapp')}</span>
-              </button>
+              </a>
 
               <button
                 onClick={scrollToPricing}
