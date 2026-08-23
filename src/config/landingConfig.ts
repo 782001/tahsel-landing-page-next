@@ -12,6 +12,11 @@ export const landingConfig = {
   windowsDownloadUrl: 'https://github.com/782001/tahsel_updates/releases/download/Tahsel/tahsel-windows.exe',
   trialDays: '15',
 
+  // Screenshots Gallery Indices (matching Flutter LandingConfig)
+  galleryAndroidIndices: Array.from({ length: 103 }, (_, i) => i + 1),
+  galleryIosIndices: Array.from({ length: 103 }, (_, i) => i + 1),
+  galleryWindowsIndices: Array.from({ length: 59 }, (_, i) => i + 1),
+
   // Standard Plan Matrix
   standardSingleMonthlyPrice: 100,
   standardBothMonthlyPrice: 150,

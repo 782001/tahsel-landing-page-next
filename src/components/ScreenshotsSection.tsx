@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
+import { landingConfig } from '@/config/landingConfig';
 import {
   Smartphone,
   Apple,
@@ -31,9 +32,9 @@ export const ScreenshotsSection: React.FC = () => {
   const scrollLeftRef = useRef(0);
   const isDraggingRef = useRef(false);
 
-  const androidImages = Array.from({ length: 16 }, (_, i) => `/assets/images/android/${i + 1}.png`);
-  const iosImages = Array.from({ length: 16 }, (_, i) => `/assets/images/ios/${i + 1}.png`);
-  const windowsImages = Array.from({ length: 16 }, (_, i) => `/assets/images/windows/${i + 1}.png`);
+  const androidImages = landingConfig.galleryAndroidIndices.map((i) => `/assets/images/android/${i}.png`);
+  const iosImages = landingConfig.galleryIosIndices.map((i) => `/assets/images/ios/${i}.png`);
+  const windowsImages = landingConfig.galleryWindowsIndices.map((i) => `/assets/images/windows/${i}.png`);
 
   const currentImages =
     activePlatform === 'android'
