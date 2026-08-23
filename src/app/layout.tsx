@@ -3,7 +3,7 @@ import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tahsel.app'),
+  metadataBase: new URL('https://tahsel-page.vercel.app'),
   title: 'تحصيل | نظام إدارة الأعمال والديون والمخزون والمصروفات الأول في مصر',
   description:
     'نظام شامل لإدارة مبيعاتك، فواتيرك، ديون العملاء والموردين، المخزون، المصروفات، الموظفين، ورصيد الخزنة بدقة وسهولة. متاح للأندرويد، الآيفون، والكمبيوتر.',
@@ -22,21 +22,35 @@ export const metadata: Metadata = {
     title: 'تحصيل | إدارة مشروعك بالكامل من مكان واحد',
     description:
       'من الفواتير والديون والمخزون إلى المصروفات والموظفين والخزنة والتقارير. صُمم خصيصاً لأصحاب الأعمال في مصر.',
-    url: 'https://tahsel.app',
-    siteName: 'Tahsel App',
+    url: 'https://tahsel-page.vercel.app',
+    siteName: 'تحصيل - Tahsel',
     images: [
       {
         url: '/assets/images/appLogo.png',
         width: 512,
         height: 512,
         alt: 'تحصيل Logo',
+        type: 'image/png',
       },
     ],
     locale: 'ar_EG',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'تحصيل | إدارة مشروعك بالكامل من مكان واحد',
+    description:
+      'نظام شامل لإدارة مبيعاتك، فواتيرك، ديون العملاء والموردين، المخزون، المصروفات، الموظفين، ورصيد الخزنة.',
+    images: ['/assets/images/appLogo.png'],
+  },
   icons: {
-    icon: '/assets/images/appLogo.png',
+    icon: [
+      { url: '/assets/images/appLogo.png', type: 'image/png' },
+    ],
+    shortcut: ['/assets/images/appLogo.png'],
+    apple: [
+      { url: '/assets/images/appLogo.png', type: 'image/png' },
+    ],
   },
 };
 
