@@ -9,7 +9,7 @@ export const landingConfig = {
   termsUrl: 'https://www.termsfeed.com/live/87c81dc7-d1da-407a-90b2-b74aa6f928ce',
   androidDownloadUrl: 'https://play.google.com/store/apps/details?id=com.awadi.tahsel',
   iosDownloadUrl: 'https://apps.apple.com/us/app/%D8%AA%D8%AD%D8%B5%D9%8A%D9%84-tahsel/id6782921961',
-  windowsDownloadUrl: 'https://github.com/782001/tahsel_updates/releases/download/Tahsel/tahsel-windows.exe',
+  windowsDownloadUrl: 'https://apps.microsoft.com/detail/9p2j9wf05tl5?hl=en-US&gl=EG',
   trialDays: '15',
 
   // Screenshots Gallery Indices (matching Flutter LandingConfig)
