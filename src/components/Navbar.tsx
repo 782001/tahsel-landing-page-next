@@ -65,12 +65,12 @@ export const Navbar: React.FC = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-3 cursor-pointer group"
           >
-            <div className="relative w-9 h-9 transition-transform duration-300 group-hover:scale-105">
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/assets/images/appLogo.png"
                 alt="Tahsel Logo"
                 fill
-                sizes="36px"
+                sizes="(max-width: 640px) 44px, 48px"
                 className="object-contain"
                 priority
               />

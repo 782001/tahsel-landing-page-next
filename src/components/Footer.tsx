@@ -36,8 +36,8 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-8 h-8">
-                <Image src="/assets/images/appLogo.png" alt="Tahsel Logo" fill sizes="32px" className="object-contain" />
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11">
+                <Image src="/assets/images/appLogo.png" alt="Tahsel Logo" fill sizes="44px" className="object-contain" />
               </div>
               <span className="text-2xl font-bold text-white tracking-tight">{t('landing_app_name')}</span>
             </div>
