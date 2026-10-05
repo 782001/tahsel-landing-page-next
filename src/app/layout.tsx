@@ -5,7 +5,7 @@ import { LanguageProvider } from '@/context/LanguageContext';
 export const metadata: Metadata = {
   metadataBase: new URL('https://tahsel-page.vercel.app'),
   title: {
-    default: 'تطبيق تحصيل | نظام إدارة الأعمال والديون والمخزون',
+    default: 'تطبيق تحصيل | إدارة مشروعك بالكامل من مكان واحد',
     template: '%s | تطبيق تحصيل'
   },
   description:
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   applicationName: 'تطبيق تحصيل - Tahsel App',
   keywords: [
     'تطبيق تحصيل',
+    'تطبيق تحصيل لادارة مشروعك',
+    'موقع تطبيق تحصيل',
     'برنامج تحصيل',
     'تحصيل',
     'Tahsel',
@@ -32,6 +34,9 @@ export const metadata: Metadata = {
   publisher: 'Tahsel Team',
   alternates: {
     canonical: '/',
+  },
+  verification: {
+    google: 'google696e958d2625ad02',
   },
   robots: {
     index: true,
@@ -81,6 +86,25 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'تطبيق تحصيل',
+  alternateName: ['Tahsel', 'Tahsel App', 'برنامج تحصيل', 'تطبيق تحصيل لإدارة مشروعك'],
+  description:
+    'تطبيق تحصيل هو الحل الأمثل لإدارة الفواتير، الديون، المخزون، المصروفات، الموظفين والخزنة. صُمم خصيصاً لأصحاب الأعمال في مصر والوطن العربي.',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Android, iOS, Windows',
+  url: 'https://tahsel-page.vercel.app',
+  image: 'https://tahsel-page.vercel.app/assets/images/appLogo.png',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EGP',
+    description: '15 يوم تجربة مجانية',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -88,6 +112,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-[#0A0E1A] text-white antialiased selection:bg-blue-600/30" suppressHydrationWarning>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
